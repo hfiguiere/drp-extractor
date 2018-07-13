@@ -1,0 +1,10 @@
+[package]
+name = "drp-extractor"
+version = "0.1.0"
+authors = ["Hubert Figuière <hub@figuiere.net>"]
+
+[dependencies]
+docopt = "1.0.0"
+try_opt = "0.1.1"
+xml-rs = "0.8.0"
+zip = "0.4.2"
