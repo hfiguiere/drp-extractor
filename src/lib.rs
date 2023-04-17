@@ -13,7 +13,7 @@ use std::fs::File;
 use std::path::Path;
 
 use project::Project;
-use mediapool::MediaPool;
+use mediapool::{MpFolder, MediaPool};
 use sequence::Sequence;
 
 pub struct ProjectArchive {
@@ -32,6 +32,10 @@ pub fn read_project_archive<T: AsRef<Path>>(path: T) -> Option<ProjectArchive> {
     if let Ok(project_file) = zip.by_name("project.xml") {
         // read project file
 
+    }
+    if let Ok(mp_file) = zip.by_name(mediapool::MEDIAPOOL_DIR.to_owned()
+                                     + "/" + XML_FILE_NAME) {
+        let folder = MpFolder::from_folder(mp_file);
     }
 
     None
